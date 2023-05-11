@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B8412A0C6C2D00686D35 /* Colors.swift */; };
 		718818AC2A0C644300122885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AB2A0C644300122885 /* AppDelegate.swift */; };
 		718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AD2A0C644300122885 /* SceneDelegate.swift */; };
 		718818B02A0C644300122885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AF2A0C644300122885 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7151B8412A0C6C2D00686D35 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		718818A82A0C644300122885 /* IntelbrasProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelbrasProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718818AB2A0C644300122885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718818AD2A0C644300122885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7151B8402A0C6C2D00686D35 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7151B8412A0C6C2D00686D35 /* Colors.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		7188189F2A0C644300122885 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		718818AA2A0C644300122885 /* IntelbrasProject */ = {
 			isa = PBXGroup;
 			children = (
+				7151B8402A0C6C2D00686D35 /* Utils */,
 				718818AB2A0C644300122885 /* AppDelegate.swift */,
 				718818AD2A0C644300122885 /* SceneDelegate.swift */,
 				718818AF2A0C644300122885 /* ViewController.swift */,
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				718818B02A0C644300122885 /* ViewController.swift in Sources */,
+				7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */,
 				718818AC2A0C644300122885 /* AppDelegate.swift in Sources */,
 				718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */,
 			);
