@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,120 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IntelbrasProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rc8-I5-qI1" userLabel="TabBar">
+                                <rect key="frame" x="0.0" y="738" width="393" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkR-3z-F0A" userLabel="AddDeviceButton">
+                                        <rect key="frame" x="297" y="12" width="80" height="56"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="fab" title=""/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CL5-h1-yDj" userLabel="DashboardButton">
+                                        <rect key="frame" x="4" y="16" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="apO-S7-hRy"/>
+                                            <constraint firstAttribute="width" constant="48" id="u2C-Jp-cPi"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icHomeBottom"/>
+                                        <connections>
+                                            <action selector="didTapDashboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o4Q-yg-Pvz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urR-T7-1bt" userLabel="FavoriteButton">
+                                        <rect key="frame" x="52" y="16" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="PRO-ji-CYu"/>
+                                            <constraint firstAttribute="height" constant="48" id="zEc-Ep-dlK"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icBookmarkBottom" title=""/>
+                                        <connections>
+                                            <action selector="didTapFavorite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Txv-Bt-Kg7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOJ-zS-Qms" userLabel="VideoButton">
+                                        <rect key="frame" x="100" y="16" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="eJQ-43-wlq"/>
+                                            <constraint firstAttribute="height" constant="48" id="uah-7g-fBW"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icVideoDeviceBottom" title=""/>
+                                        <connections>
+                                            <action selector="didTapVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q8n-Rv-74V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhv-lD-W8U" userLabel="AlarmButton">
+                                        <rect key="frame" x="148" y="16" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="1YQ-FT-xwU"/>
+                                            <constraint firstAttribute="width" constant="48" id="j3u-W6-1bE"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icAlarmDeviceBottom" title=""/>
+                                        <connections>
+                                            <action selector="didTapAlarm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvD-eF-q8c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="CellBackground"/>
+                                <constraints>
+                                    <constraint firstItem="urR-T7-1bt" firstAttribute="top" secondItem="rc8-I5-qI1" secondAttribute="top" constant="16" id="BeT-GS-5qR"/>
+                                    <constraint firstAttribute="bottom" secondItem="HkR-3z-F0A" secondAttribute="bottom" constant="12" id="DbX-9A-L3k"/>
+                                    <constraint firstItem="CL5-h1-yDj" firstAttribute="top" secondItem="rc8-I5-qI1" secondAttribute="top" constant="16" id="Dob-SF-woM"/>
+                                    <constraint firstAttribute="bottom" secondItem="jhv-lD-W8U" secondAttribute="bottom" constant="16" id="Qlz-8k-lpG"/>
+                                    <constraint firstAttribute="bottom" secondItem="kOJ-zS-Qms" secondAttribute="bottom" constant="16" id="TYN-bh-KkX"/>
+                                    <constraint firstAttribute="bottom" secondItem="urR-T7-1bt" secondAttribute="bottom" constant="16" id="XVE-Vv-VJN"/>
+                                    <constraint firstAttribute="height" constant="80" id="ZpV-19-j8T"/>
+                                    <constraint firstItem="CL5-h1-yDj" firstAttribute="leading" secondItem="rc8-I5-qI1" secondAttribute="leading" constant="4" id="dhf-a3-KNA"/>
+                                    <constraint firstItem="kOJ-zS-Qms" firstAttribute="leading" secondItem="urR-T7-1bt" secondAttribute="trailing" id="dvu-Jb-uW3"/>
+                                    <constraint firstItem="jhv-lD-W8U" firstAttribute="top" secondItem="rc8-I5-qI1" secondAttribute="top" constant="16" id="fcH-5A-KaK"/>
+                                    <constraint firstItem="jhv-lD-W8U" firstAttribute="leading" secondItem="kOJ-zS-Qms" secondAttribute="trailing" id="qro-8d-aU8"/>
+                                    <constraint firstAttribute="trailing" secondItem="HkR-3z-F0A" secondAttribute="trailing" constant="16" id="sRp-Hx-qEl"/>
+                                    <constraint firstItem="kOJ-zS-Qms" firstAttribute="top" secondItem="rc8-I5-qI1" secondAttribute="top" constant="16" id="snm-do-0D5"/>
+                                    <constraint firstAttribute="bottom" secondItem="CL5-h1-yDj" secondAttribute="bottom" constant="16" id="uPf-Ko-2iL"/>
+                                    <constraint firstItem="urR-T7-1bt" firstAttribute="leading" secondItem="CL5-h1-yDj" secondAttribute="trailing" id="wty-L9-M3Q"/>
+                                    <constraint firstItem="HkR-3z-F0A" firstAttribute="top" secondItem="rc8-I5-qI1" secondAttribute="top" constant="12" id="yQ4-HR-LGM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="rc8-I5-qI1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QCD-aK-Dtx"/>
+                            <constraint firstItem="rc8-I5-qI1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zt8-rq-5Ya"/>
+                            <constraint firstItem="rc8-I5-qI1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uc8-8K-z32"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alarmButton" destination="jhv-lD-W8U" id="Nc8-vV-s4c"/>
+                        <outlet property="dashboardButton" destination="CL5-h1-yDj" id="96d-U1-TiC"/>
+                        <outlet property="favoriteButton" destination="urR-T7-1bt" id="8b8-EX-zds"/>
+                        <outlet property="videoButton" destination="kOJ-zS-Qms" id="t42-uG-Sqb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="135.1145038167939" y="4.9295774647887329"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fab" width="56" height="56"/>
+        <image name="icAlarmDeviceBottom" width="48" height="48"/>
+        <image name="icBookmarkBottom" width="48" height="48"/>
+        <image name="icHomeBottom" width="48" height="48"/>
+        <image name="icVideoDeviceBottom" width="48" height="48"/>
+        <namedColor name="Background">
+            <color red="0.15686275059999999" green="0.19607841970000001" blue="0.21568629149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CellBackground">
+            <color red="0.19607841970000001" green="0.23921570180000001" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>
