@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FFEE02DDA475D1FCCFEC052 /* Pods_IntelbrasProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */; };
 		7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B8412A0C6C2D00686D35 /* Colors.swift */; };
 		7151B84A2A0DC61E00686D35 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B8492A0DC61E00686D35 /* Constants.swift */; };
 		7151B84C2A0DC8BE00686D35 /* AlarmCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */; };
 		7151B84E2A0DC9BC00686D35 /* VideoDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */; };
+		7151B8502A0E495100686D35 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B84F2A0E495100686D35 /* Device.swift */; };
 		718818AC2A0C644300122885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AB2A0C644300122885 /* AppDelegate.swift */; };
 		718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AD2A0C644300122885 /* SceneDelegate.swift */; };
 		718818B02A0C644300122885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AF2A0C644300122885 /* ViewController.swift */; };
@@ -20,10 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		683AA2B75305403921168FDC /* Pods-IntelbrasProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.debug.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.debug.xcconfig"; sourceTree = "<group>"; };
 		7151B8412A0C6C2D00686D35 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7151B8492A0DC61E00686D35 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCentral.swift; sourceTree = "<group>"; };
 		7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDevice.swift; sourceTree = "<group>"; };
+		7151B84F2A0E495100686D35 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		718818A82A0C644300122885 /* IntelbrasProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelbrasProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718818AB2A0C644300122885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718818AD2A0C644300122885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		718818B42A0C644400122885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		718818B72A0C644400122885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		718818B92A0C644400122885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.release.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.release.xcconfig"; sourceTree = "<group>"; };
+		C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelbrasProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,12 +45,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFEE02DDA475D1FCCFEC052 /* Pods_IntelbrasProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DD3FE6BED8D2547B06BBB3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				683AA2B75305403921168FDC /* Pods-IntelbrasProject.debug.xcconfig */,
+				7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4AE6EB24A6957BE52C6907AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7151B8402A0C6C2D00686D35 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +117,7 @@
 			children = (
 				7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */,
 				7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */,
+				7151B84F2A0E495100686D35 /* Device.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,6 +135,8 @@
 			children = (
 				718818AA2A0C644300122885 /* IntelbrasProject */,
 				718818A92A0C644300122885 /* Products */,
+				2DD3FE6BED8D2547B06BBB3D /* Pods */,
+				4AE6EB24A6957BE52C6907AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 718818BC2A0C644400122885 /* Build configuration list for PBXNativeTarget "IntelbrasProject" */;
 			buildPhases = (
+				66817040E863B936382D8555 /* [CP] Check Pods Manifest.lock */,
 				718818A42A0C644300122885 /* Sources */,
 				718818A52A0C644300122885 /* Frameworks */,
 				718818A62A0C644300122885 /* Resources */,
+				DC811037707A169582C92E50 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,6 +231,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		66817040E863B936382D8555 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IntelbrasProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC811037707A169582C92E50 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		718818A42A0C644300122885 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -213,6 +285,7 @@
 				718818AC2A0C644300122885 /* AppDelegate.swift in Sources */,
 				718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */,
 				7151B84C2A0DC8BE00686D35 /* AlarmCentral.swift in Sources */,
+				7151B8502A0E495100686D35 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +427,7 @@
 		};
 		718818BD2A0C644400122885 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683AA2B75305403921168FDC /* Pods-IntelbrasProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -382,6 +456,7 @@
 		};
 		718818BE2A0C644400122885 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -1,0 +1,6 @@
+framework module Pods_IntelbrasProject {
+  umbrella header "Pods-IntelbrasProject-umbrella.h"
+
+  export *
+  module * { export * }
+}
