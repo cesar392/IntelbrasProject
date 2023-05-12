@@ -19,6 +19,7 @@
 		718818B32A0C644300122885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718818B12A0C644300122885 /* Main.storyboard */; };
 		718818B52A0C644400122885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718818B42A0C644400122885 /* Assets.xcassets */; };
 		718818B82A0C644400122885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718818B62A0C644400122885 /* LaunchScreen.storyboard */; };
+		71CD3C692A0E722200EC20AF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C682A0E722200EC20AF /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		718818B42A0C644400122885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		718818B72A0C644400122885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		718818B92A0C644400122885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71CD3C682A0E722200EC20AF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.release.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.release.xcconfig"; sourceTree = "<group>"; };
 		C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelbrasProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -58,7 +60,6 @@
 				683AA2B75305403921168FDC /* Pods-IntelbrasProject.debug.xcconfig */,
 				7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,6 +74,7 @@
 		7151B8402A0C6C2D00686D35 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				71CD3C682A0E722200EC20AF /* R.generated.swift */,
 				7151B8412A0C6C2D00686D35 /* Colors.swift */,
 				7151B8492A0DC61E00686D35 /* Constants.swift */,
 			);
@@ -171,6 +173,7 @@
 			buildConfigurationList = 718818BC2A0C644400122885 /* Build configuration list for PBXNativeTarget "IntelbrasProject" */;
 			buildPhases = (
 				66817040E863B936382D8555 /* [CP] Check Pods Manifest.lock */,
+				71178E6A2A0E6FC8006D9907 /* ShellScript */,
 				718818A42A0C644300122885 /* Sources */,
 				718818A52A0C644300122885 /* Frameworks */,
 				718818A62A0C644300122885 /* Resources */,
@@ -254,6 +257,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		71178E6A2A0E6FC8006D9907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		DC811037707A169582C92E50 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,6 +302,7 @@
 			files = (
 				7151B84E2A0DC9BC00686D35 /* VideoDevice.swift in Sources */,
 				7151B84A2A0DC61E00686D35 /* Constants.swift in Sources */,
+				71CD3C692A0E722200EC20AF /* R.generated.swift in Sources */,
 				718818B02A0C644300122885 /* ViewController.swift in Sources */,
 				7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */,
 				718818AC2A0C644300122885 /* AppDelegate.swift in Sources */,

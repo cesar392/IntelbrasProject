@@ -8,5 +8,6 @@ target 'IntelbrasProject' do
   # Pods for IntelbrasProject
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
+  pod 'R.swift'
 
 end
