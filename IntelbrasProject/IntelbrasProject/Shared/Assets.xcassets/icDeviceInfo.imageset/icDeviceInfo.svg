@@ -1,0 +1,6 @@
+<svg id="icDeviceInfo" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Shape" d="M0,0H24V24H0Z" fill="none"/>
+  <path id="Shape-2" data-name="Shape" d="M10,0A10,10,0,1,0,20,10,10,10,0,0,0,10,0Z" transform="translate(2 2)" fill="none" stroke="#9db3bd" stroke-width="1"/>
+  <path id="Path" d="M1,0V7.178" transform="translate(11 10.5)" fill="#fff" stroke="#9db3bd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  <circle id="Oval_2" data-name="Oval 2" cx="0.5" cy="0.5" r="0.5" transform="translate(11.5 6.5)" fill="#9db3bd" stroke="#9db3bd" stroke-width="1"/>
+</svg>

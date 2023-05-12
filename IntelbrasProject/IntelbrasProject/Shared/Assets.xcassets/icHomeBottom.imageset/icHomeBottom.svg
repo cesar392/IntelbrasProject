@@ -1,0 +1,10 @@
+<svg id="icHomeBottom" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <rect id="container" width="48" height="48" fill="#a8a3ae" opacity="0"/>
+  <path id="Path" d="M0,0H24V24H0Z" transform="translate(12 12)" fill="none" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+  <g id="ic" transform="translate(13 12)">
+    <path id="Path-2" data-name="Path" d="M.005,0V9.21c0,.425-.011.853,0,1.281v.017A.482.482,0,0,0,.461,11H5.952a.482.482,0,0,0,.456-.492V5" transform="translate(3 9.5)" fill="none" stroke="#9db3bd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path-3" data-name="Path" d="M3.167,1.824A1.717,1.717,0,0,0,1.583,0,1.717,1.717,0,0,0,0,1.824" transform="translate(9.417 12.691)" fill="none" stroke="#9db3bd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path-4" data-name="Path" d="M0,5q0,.214,0,.428v5.084A.482.482,0,0,0,.456,11H5.947a.482.482,0,0,0,.456-.492V1.3c0-.425.011-.853,0-1.281V0" transform="translate(12.593 9.5)" fill="none" stroke="#9db3bd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path-5" data-name="Path" d="M0,14.884,1.2,2.089a1,1,0,0,1,.89-.89L14.884,0" transform="translate(11 0.87) rotate(45)" fill="none" stroke="#9db3bd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

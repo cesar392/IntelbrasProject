@@ -1,0 +1,9 @@
+<svg id="icVideoDeviceBottom" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <rect id="Retângulo_782" data-name="Retângulo 782" width="48" height="48" fill="#a8a3ae" opacity="0"/>
+  <path id="Caminho_62" data-name="Caminho 62" d="M0,0H24V24H0Z" transform="translate(12 12)" fill="none" fill-rule="evenodd"/>
+  <g id="ic_device" transform="translate(12 12)">
+    <path id="Caminho_63" data-name="Caminho 63" d="M11.5,11.182,16,15V4.5L11.5,8.318" transform="translate(5.75 2.25)" fill="none" stroke="#9db3bd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill-rule="evenodd"/>
+    <rect id="Retângulo_3" data-name="Retângulo 3" width="15" height="12" rx="1" transform="translate(2.25 6)" fill="none" stroke="#9db3bd" stroke-width="1"/>
+    <path id="Caminho_64" data-name="Caminho 64" d="M4,6.5H8.5" transform="translate(2 3.25)" fill="none" stroke="#9db3bd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill-rule="evenodd"/>
+  </g>
+</svg>
