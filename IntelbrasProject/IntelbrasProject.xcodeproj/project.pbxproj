@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B8412A0C6C2D00686D35 /* Colors.swift */; };
+		7151B84A2A0DC61E00686D35 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B8492A0DC61E00686D35 /* Constants.swift */; };
+		7151B84C2A0DC8BE00686D35 /* AlarmCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */; };
+		7151B84E2A0DC9BC00686D35 /* VideoDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */; };
 		718818AC2A0C644300122885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AB2A0C644300122885 /* AppDelegate.swift */; };
 		718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AD2A0C644300122885 /* SceneDelegate.swift */; };
 		718818B02A0C644300122885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AF2A0C644300122885 /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		7151B8412A0C6C2D00686D35 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		7151B8492A0DC61E00686D35 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCentral.swift; sourceTree = "<group>"; };
+		7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDevice.swift; sourceTree = "<group>"; };
 		718818A82A0C644300122885 /* IntelbrasProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelbrasProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718818AB2A0C644300122885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718818AD2A0C644300122885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,8 +49,59 @@
 			isa = PBXGroup;
 			children = (
 				7151B8412A0C6C2D00686D35 /* Colors.swift */,
+				7151B8492A0DC61E00686D35 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7151B8432A0DC52200686D35 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7151B8442A0DC53E00686D35 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7151B8452A0DC54F00686D35 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				718818AF2A0C644300122885 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7151B8462A0DC55E00686D35 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				718818B42A0C644400122885 /* Assets.xcassets */,
+				718818B62A0C644400122885 /* LaunchScreen.storyboard */,
+				718818AB2A0C644300122885 /* AppDelegate.swift */,
+				718818AD2A0C644300122885 /* SceneDelegate.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7151B8472A0DC59D00686D35 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */,
+				7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7151B8482A0DC5BB00686D35 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				718818B12A0C644300122885 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7188189F2A0C644300122885 = {
@@ -66,13 +123,13 @@
 		718818AA2A0C644300122885 /* IntelbrasProject */ = {
 			isa = PBXGroup;
 			children = (
+				7151B8432A0DC52200686D35 /* API */,
+				7151B8472A0DC59D00686D35 /* Models */,
+				7151B8482A0DC5BB00686D35 /* Views */,
+				7151B8442A0DC53E00686D35 /* ViewModels */,
+				7151B8452A0DC54F00686D35 /* ViewControllers */,
+				7151B8462A0DC55E00686D35 /* Shared */,
 				7151B8402A0C6C2D00686D35 /* Utils */,
-				718818AB2A0C644300122885 /* AppDelegate.swift */,
-				718818AD2A0C644300122885 /* SceneDelegate.swift */,
-				718818AF2A0C644300122885 /* ViewController.swift */,
-				718818B12A0C644300122885 /* Main.storyboard */,
-				718818B42A0C644400122885 /* Assets.xcassets */,
-				718818B62A0C644400122885 /* LaunchScreen.storyboard */,
 				718818B92A0C644400122885 /* Info.plist */,
 			);
 			path = IntelbrasProject;
@@ -149,10 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7151B84E2A0DC9BC00686D35 /* VideoDevice.swift in Sources */,
+				7151B84A2A0DC61E00686D35 /* Constants.swift in Sources */,
 				718818B02A0C644300122885 /* ViewController.swift in Sources */,
 				7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */,
 				718818AC2A0C644300122885 /* AppDelegate.swift in Sources */,
 				718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */,
+				7151B84C2A0DC8BE00686D35 /* AlarmCentral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
