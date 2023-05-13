@@ -10,7 +10,9 @@ import Foundation
 struct AlarmCentral: Device {
     let id: String
     var name: String
-    var macAddress: String
+    var serial: String? = nil
+    var macAddress: String?
+    var username: String? = nil
     var password: String
     var type = DeviceType.alarm
 }

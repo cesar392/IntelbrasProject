@@ -10,9 +10,9 @@ import Foundation
 struct VideoDevice: Device {
     let id: String
     var name: String
-    let serial: String
-    var macAddress: String
-    let username: String
+    var serial: String?
+    var macAddress: String? = nil
+    var username: String?
     var password: String
     var type = DeviceType.video
 }
