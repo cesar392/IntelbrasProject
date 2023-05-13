@@ -12,17 +12,19 @@ enum DeviceType {
     case video
     case alarm
 
-    var image: UIImageView {
+    var image: UIImage? {
         switch self {
         case .video:
-            return UIImageView()
+            return R.image.icVideoDevice()
         case .alarm:
-            return UIImageView()
+            return R.image.icAlarmDevice()
         }
     }
 }
 
 protocol Device {
-    var name: String { get }
-    var type: DeviceType { get }
+    var name: String { get set }
+    var type: DeviceType { get set }
+    var macAddress: String { get set }
+    var password: String { get set }
 }

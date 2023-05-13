@@ -93,12 +93,20 @@
                                     <constraint firstItem="HkR-3z-F0A" firstAttribute="top" secondItem="rc8-I5-qI1" secondAttribute="top" constant="12" id="yQ4-HR-LGM"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aKH-jK-27G">
+                                <rect key="frame" x="0.0" y="59" width="393" height="679"/>
+                                <color key="backgroundColor" name="Background"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="rc8-I5-qI1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QCD-aK-Dtx"/>
+                            <constraint firstItem="aKH-jK-27G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UoG-MS-Zo4"/>
                             <constraint firstItem="rc8-I5-qI1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zt8-rq-5Ya"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aKH-jK-27G" secondAttribute="trailing" id="cB8-Mp-4zx"/>
+                            <constraint firstItem="aKH-jK-27G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d38-GL-Jt9"/>
+                            <constraint firstItem="rc8-I5-qI1" firstAttribute="top" secondItem="aKH-jK-27G" secondAttribute="bottom" id="nLu-rg-xxZ"/>
                             <constraint firstItem="rc8-I5-qI1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uc8-8K-z32"/>
                         </constraints>
                     </view>
@@ -106,6 +114,7 @@
                         <outlet property="alarmButton" destination="jhv-lD-W8U" id="Nc8-vV-s4c"/>
                         <outlet property="dashboardButton" destination="CL5-h1-yDj" id="96d-U1-TiC"/>
                         <outlet property="favoriteButton" destination="urR-T7-1bt" id="8b8-EX-zds"/>
+                        <outlet property="tableView" destination="aKH-jK-27G" id="9FA-co-kAc"/>
                         <outlet property="videoButton" destination="kOJ-zS-Qms" id="t42-uG-Sqb"/>
                     </connections>
                 </viewController>
@@ -121,10 +130,10 @@
         <image name="icHomeBottom" width="48" height="48"/>
         <image name="icVideoDeviceBottom" width="48" height="48"/>
         <namedColor name="Background">
-            <color red="0.15686275059999999" green="0.19607841970000001" blue="0.21568629149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.15700000524520874" green="0.19599999487400055" blue="0.21600000560283661" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="CellBackground">
-            <color red="0.19607841970000001" green="0.23921570180000001" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.19599999487400055" green="0.23899999260902405" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

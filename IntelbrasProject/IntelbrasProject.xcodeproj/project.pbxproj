@@ -20,6 +20,9 @@
 		718818B52A0C644400122885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718818B42A0C644400122885 /* Assets.xcassets */; };
 		718818B82A0C644400122885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718818B62A0C644400122885 /* LaunchScreen.storyboard */; };
 		71CD3C692A0E722200EC20AF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C682A0E722200EC20AF /* R.generated.swift */; };
+		71CD3C6B2A10065000EC20AF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C6A2A10065000EC20AF /* ViewModel.swift */; };
+		71CD3C6F2A10072B00EC20AF /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C6D2A10072B00EC20AF /* DeviceCell.swift */; };
+		71CD3C702A10072B00EC20AF /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CD3C6E2A10072B00EC20AF /* DeviceCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		718818B72A0C644400122885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		718818B92A0C644400122885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71CD3C682A0E722200EC20AF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		71CD3C6A2A10065000EC20AF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		71CD3C6D2A10072B00EC20AF /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		71CD3C6E2A10072B00EC20AF /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
 		7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.release.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.release.xcconfig"; sourceTree = "<group>"; };
 		C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelbrasProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,6 +97,7 @@
 		7151B8442A0DC53E00686D35 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				71CD3C6A2A10065000EC20AF /* ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -156,6 +163,7 @@
 				7151B8432A0DC52200686D35 /* API */,
 				7151B8472A0DC59D00686D35 /* Models */,
 				7151B8482A0DC5BB00686D35 /* Views */,
+				71CD3C6C2A1006EC00EC20AF /* Components */,
 				7151B8442A0DC53E00686D35 /* ViewModels */,
 				7151B8452A0DC54F00686D35 /* ViewControllers */,
 				7151B8462A0DC55E00686D35 /* Shared */,
@@ -163,6 +171,15 @@
 				718818B92A0C644400122885 /* Info.plist */,
 			);
 			path = IntelbrasProject;
+			sourceTree = "<group>";
+		};
+		71CD3C6C2A1006EC00EC20AF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				71CD3C6D2A10072B00EC20AF /* DeviceCell.swift */,
+				71CD3C6E2A10072B00EC20AF /* DeviceCell.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +246,7 @@
 				718818B82A0C644400122885 /* LaunchScreen.storyboard in Resources */,
 				718818B52A0C644400122885 /* Assets.xcassets in Resources */,
 				718818B32A0C644300122885 /* Main.storyboard in Resources */,
+				71CD3C702A10072B00EC20AF /* DeviceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71CD3C6B2A10065000EC20AF /* ViewModel.swift in Sources */,
 				7151B84E2A0DC9BC00686D35 /* VideoDevice.swift in Sources */,
 				7151B84A2A0DC61E00686D35 /* Constants.swift in Sources */,
 				71CD3C692A0E722200EC20AF /* R.generated.swift in Sources */,
@@ -307,6 +326,7 @@
 				7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */,
 				718818AC2A0C644300122885 /* AppDelegate.swift in Sources */,
 				718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */,
+				71CD3C6F2A10072B00EC20AF /* DeviceCell.swift in Sources */,
 				7151B84C2A0DC8BE00686D35 /* AlarmCentral.swift in Sources */,
 				7151B8502A0E495100686D35 /* Device.swift in Sources */,
 			);

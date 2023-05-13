@@ -9,29 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // MARK: - Variables
+    // MARK: - UIComponents
     @IBOutlet weak var dashboardButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var videoButton: UIButton!
     @IBOutlet weak var alarmButton: UIButton!
 
-    lazy var devicesList: [Device] = {
-        var deviceList = [Device]()
-        deviceList.append(contentsOf: AlarmCentral.getMockAlarmCentrals())
-        deviceList.append(contentsOf: VideoDevice.getMockVideoDevices())
-        return deviceList
-    }()
+    @IBOutlet weak var tableView: UITableView!
 
-    // MARK: - UIComponents
-
+    // MARK: - Variables
+    let viewModel = ViewModel()
 
     // MARK: - LifeCyle
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        setupTableView()
     }
 
     // MARK: - Setup Targets
@@ -40,7 +32,7 @@ class ViewController: UIViewController {
     @IBAction func didTapVideo(_ sender: Any) { didTapVideo() }
     @IBAction func didTapAlarm(_ sender: Any) { didTapAlarm() }
 
-    // MARK: - Setup Actions
+    // MARK: - Actions
     private func didTapDashboard() {
     }
 
@@ -55,5 +47,28 @@ class ViewController: UIViewController {
 
 
     // MARK: - UI Setup
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
 
+        tableView.register(UINib(nibName: DeviceCell.identifier, bundle: nil),
+                           forCellReuseIdentifier: DeviceCell.identifier)
+    }
+}
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.devicesList.count
+    }
+
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: DeviceCell.identifier) as? DeviceCell {
+            let currentDevice = viewModel.devicesList[indexPath.row]
+            cell.setupViewWith(device: currentDevice)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
 }

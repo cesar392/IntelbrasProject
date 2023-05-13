@@ -9,10 +9,10 @@ import Foundation
 
 struct AlarmCentral: Device {
     let id: String
-    let name: String
-    let macAddress: String
-    let password: String
-    let type = DeviceType.alarm
+    var name: String
+    var macAddress: String
+    var password: String
+    var type = DeviceType.alarm
 }
 
 extension AlarmCentral {
