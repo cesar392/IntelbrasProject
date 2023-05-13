@@ -17,4 +17,7 @@ struct Constants {
 
     static let API_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhM2JkZGQyLTNmM2QtNDQ5Ny1iNGQ0LTVjOTk3NjczZTQ5MiIsImlhdCI6MTY4MzY1NjE1MywiZXhwIjoxNjg2MjQ4MTUzfQ.zUho0DDWIsjOMV_yEbZT9_usvGRNFpi0JoS_RWr9rOs"
 
+    // MARK: - Spacing
+    static let defaultCornerRadius: CGFloat = 8
+
 }

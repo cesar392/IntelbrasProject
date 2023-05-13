@@ -12,7 +12,7 @@ extension UIColor {
     static var defaultBackground: UIColor { return UIColor(hexString: "#263238") }
     static var backgroundColorLight: UIColor { return UIColor(hexString: "#2F3D44") }
     static var colorPrimary: UIColor { return UIColor(hexString: "#00A335") }
-    static var lightGray: UIColor { return UIColor(hexString: "#9DB3BD") }
+    static var customLightGray: UIColor { return UIColor(hexString: "#9DB3BD") }
 }
 
 extension UIColor {
