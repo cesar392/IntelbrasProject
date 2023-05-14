@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2FFEE02DDA475D1FCCFEC052 /* Pods_IntelbrasProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */; };
+		71273FFC2A111244005686C0 /* BaseDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71273FFB2A111244005686C0 /* BaseDevice.swift */; };
 		7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B8412A0C6C2D00686D35 /* Colors.swift */; };
 		7151B84A2A0DC61E00686D35 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B8492A0DC61E00686D35 /* Constants.swift */; };
 		7151B84C2A0DC8BE00686D35 /* AlarmCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */; };
 		7151B84E2A0DC9BC00686D35 /* VideoDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */; };
-		7151B8502A0E495100686D35 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B84F2A0E495100686D35 /* Device.swift */; };
 		718818AC2A0C644300122885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AB2A0C644300122885 /* AppDelegate.swift */; };
 		718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AD2A0C644300122885 /* SceneDelegate.swift */; };
 		718818B02A0C644300122885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AF2A0C644300122885 /* ViewController.swift */; };
@@ -30,11 +30,11 @@
 
 /* Begin PBXFileReference section */
 		683AA2B75305403921168FDC /* Pods-IntelbrasProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.debug.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.debug.xcconfig"; sourceTree = "<group>"; };
+		71273FFB2A111244005686C0 /* BaseDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDevice.swift; sourceTree = "<group>"; };
 		7151B8412A0C6C2D00686D35 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7151B8492A0DC61E00686D35 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCentral.swift; sourceTree = "<group>"; };
 		7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDevice.swift; sourceTree = "<group>"; };
-		7151B84F2A0E495100686D35 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		718818A82A0C644300122885 /* IntelbrasProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelbrasProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718818AB2A0C644300122885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718818AD2A0C644300122885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,9 +133,9 @@
 		7151B8472A0DC59D00686D35 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				71273FFB2A111244005686C0 /* BaseDevice.swift */,
 				7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */,
 				7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */,
-				7151B84F2A0E495100686D35 /* Device.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,13 +333,13 @@
 				71CD3C762A10793500EC20AF /* Services.swift in Sources */,
 				71CD3C692A0E722200EC20AF /* R.generated.swift in Sources */,
 				718818B02A0C644300122885 /* ViewController.swift in Sources */,
+				71273FFC2A111244005686C0 /* BaseDevice.swift in Sources */,
 				7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */,
 				71CD3C782A107A3D00EC20AF /* NetworkFetcher.swift in Sources */,
 				718818AC2A0C644300122885 /* AppDelegate.swift in Sources */,
 				718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */,
 				71CD3C6F2A10072B00EC20AF /* DeviceCell.swift in Sources */,
 				7151B84C2A0DC8BE00686D35 /* AlarmCentral.swift in Sources */,
-				7151B8502A0E495100686D35 /* Device.swift in Sources */,
 				71CD3C742A10791300EC20AF /* ServicesProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

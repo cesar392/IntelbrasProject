@@ -8,17 +8,25 @@
 import Foundation
 import UIKit
 
-struct AlarmCentral: Device, Codable {
+struct AlarmCentral: Codable {
     let id: String
     var name: String
     var macAddress: String
     var password: String
+}
 
+// MARK: - Extension BaseDevice
+extension AlarmCentral: BaseDevice {
     func getImage() -> UIImage? {
         return R.image.icAlarmDevice()
     }
+
+    func getType() -> DeviceType {
+        return .alarm
+    }
 }
 
+// MARK: - Mock Data
 extension AlarmCentral {
     static func getMockAlarmCentrals() -> [AlarmCentral] {
         let alarmCentral1 = AlarmCentral(id: "1",

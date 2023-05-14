@@ -8,18 +8,26 @@
 import Foundation
 import UIKit
 
-struct VideoDevice: Device, Codable {
+struct VideoDevice: Codable {
     let id: String
     var name: String
     var serial: String
     var username: String
     var password: String
+}
 
+// MARK: - Extension BaseDevice
+extension VideoDevice: BaseDevice {
     func getImage() -> UIImage? {
         return R.image.icVideoDevice()
     }
+
+    func getType() -> DeviceType {
+        return .video
+    }
 }
 
+// MARK: - Mock Data
 extension VideoDevice {
     static func getMockVideoDevices() -> [VideoDevice] {
         let videoDevice1 = VideoDevice(id: "1",

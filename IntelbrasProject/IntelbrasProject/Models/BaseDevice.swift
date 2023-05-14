@@ -22,7 +22,8 @@ enum DeviceType: Codable {
     }
 }
 
-protocol Device {
+protocol BaseDevice {
     var name: String { get set }
     func getImage() -> UIImage?
+    func getType() -> DeviceType
 }

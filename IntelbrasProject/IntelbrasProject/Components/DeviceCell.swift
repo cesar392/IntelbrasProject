@@ -23,7 +23,7 @@ class DeviceCell: UITableViewCell {
     }
 
     // MARK: - Setup
-    internal func setupViewWith(device: Device) {
+    internal func setupViewWith(device: BaseDevice) {
         self.mainContainer.layer.borderColor = UIColor.customLightGray.cgColor
         self.mainContainer.layer.cornerRadius = Constants.defaultCornerRadius
         self.iconImage.image = device.getImage()
