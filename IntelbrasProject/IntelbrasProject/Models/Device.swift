@@ -8,7 +8,15 @@
 import Foundation
 import UIKit
 
-enum DeviceType: Codable {
+protocol Device {
+    var id: String { get }
+    var name: String { get }
+    var image: UIImage? { get }
+    var deviceType: DeviceType { get }
+    var favorite: Bool { get }
+}
+
+enum DeviceType {
     case video
     case alarm
 
@@ -20,10 +28,4 @@ enum DeviceType: Codable {
             return R.image.icAlarmDevice()
         }
     }
-}
-
-protocol BaseDevice {
-    var name: String { get set }
-    func getImage() -> UIImage?
-    func getType() -> DeviceType
 }
