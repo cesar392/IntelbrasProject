@@ -1,5 +1,5 @@
 //
-//  Services.swift
+//  DeviceRepository.swift
 //  IntelbrasProject
 //
 //  Created by Cesar Comelli on 13/05/23.
@@ -8,12 +8,18 @@
 import Foundation
 import RxSwift
 
-class AlarmCentralService: AlarmCentralServiceProtocol {
+class AlarmCentralRepository: AlarmCentralRepositoryProtocol {
 
-    func fetchAlarmCentral(withToken token: String) -> Observable<[AlarmCentral]> {
+    private let token: String
+
+    init(token: String) {
+        self.token = token
+    }
+
+    func fetchAlarmCentral() -> Observable<[AlarmCentralDTO]> {
         return Observable.create { observer -> Disposable in
             var request = URLRequest(url: URL(string: Constants.alarmCentralsURL)!)
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            request.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
                     observer.onError(error)
@@ -50,12 +56,19 @@ class AlarmCentralService: AlarmCentralServiceProtocol {
     }
 }
 
-class VideoDeviceService: VideoDeviceServiceProtocol {
+class VideoDeviceRepository: VideoDeviceRepositoryProtocol {
 
-    func fetchVideoDevices(withToken token: String) -> Observable<[VideoDevice]> {
+    private let token: String
+
+    init(token: String) {
+        self.token = token
+    }
+
+
+    func fetchVideoDevices() -> Observable<[VideoDeviceDTO]> {
         return Observable.create { observer -> Disposable in
             var request = URLRequest(url: URL(string: Constants.videoDevicesURL)!)
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            request.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
                     observer.onError(error)
@@ -100,10 +113,10 @@ enum APIError: Error {
 
 struct AlarmCentralResponse: Codable {
     let count: Int
-    let data: [AlarmCentral]
+    let data: [AlarmCentralDTO]
 }
 
 struct VideoDeviceResponse: Codable {
     let count: Int
-    let data: [VideoDevice]
+    let data: [VideoDeviceDTO]
 }
