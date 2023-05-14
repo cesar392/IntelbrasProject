@@ -24,11 +24,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        viewModel.fetchAlarmCentral() {
+            self.tableView.reloadData()
+        }
+        viewModel.fetchVideoDevice() {
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Setup Targets
     @IBAction func didTapDashboard(_ sender: Any) { didTapDashboard() }
-    @IBAction func didTapFavorite(_ sender: Any) {  didTapFavorite() }
+    @IBAction func didTapFavorite(_ sender: Any) { didTapFavorite() }
     @IBAction func didTapVideo(_ sender: Any) { didTapVideo() }
     @IBAction func didTapAlarm(_ sender: Any) { didTapAlarm() }
 

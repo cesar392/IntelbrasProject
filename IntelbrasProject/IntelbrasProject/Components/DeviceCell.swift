@@ -20,14 +20,13 @@ class DeviceCell: UITableViewCell {
     // MARK: - LifeCyle
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     // MARK: - Setup
     internal func setupViewWith(device: Device) {
         self.mainContainer.layer.borderColor = UIColor.customLightGray.cgColor
         self.mainContainer.layer.cornerRadius = Constants.defaultCornerRadius
-        self.iconImage.image = device.type.image
+        self.iconImage.image = device.getImage()
         self.nameLabel.text = device.name
         self.clipsToBounds = true
     }
