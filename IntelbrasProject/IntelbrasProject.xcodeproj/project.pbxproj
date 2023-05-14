@@ -23,6 +23,9 @@
 		71CD3C6B2A10065000EC20AF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C6A2A10065000EC20AF /* ViewModel.swift */; };
 		71CD3C6F2A10072B00EC20AF /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C6D2A10072B00EC20AF /* DeviceCell.swift */; };
 		71CD3C702A10072B00EC20AF /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CD3C6E2A10072B00EC20AF /* DeviceCell.xib */; };
+		71CD3C742A10791300EC20AF /* ServicesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C732A10791300EC20AF /* ServicesProtocol.swift */; };
+		71CD3C762A10793500EC20AF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C752A10793500EC20AF /* Services.swift */; };
+		71CD3C782A107A3D00EC20AF /* NetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C772A107A3D00EC20AF /* NetworkFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		71CD3C6A2A10065000EC20AF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		71CD3C6D2A10072B00EC20AF /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		71CD3C6E2A10072B00EC20AF /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
+		71CD3C732A10791300EC20AF /* ServicesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesProtocol.swift; sourceTree = "<group>"; };
+		71CD3C752A10793500EC20AF /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		71CD3C772A107A3D00EC20AF /* NetworkFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetcher.swift; sourceTree = "<group>"; };
 		7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.release.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.release.xcconfig"; sourceTree = "<group>"; };
 		C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelbrasProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,6 +96,9 @@
 		7151B8432A0DC52200686D35 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				71CD3C732A10791300EC20AF /* ServicesProtocol.swift */,
+				71CD3C752A10793500EC20AF /* Services.swift */,
+				71CD3C772A107A3D00EC20AF /* NetworkFetcher.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -321,14 +330,17 @@
 				71CD3C6B2A10065000EC20AF /* ViewModel.swift in Sources */,
 				7151B84E2A0DC9BC00686D35 /* VideoDevice.swift in Sources */,
 				7151B84A2A0DC61E00686D35 /* Constants.swift in Sources */,
+				71CD3C762A10793500EC20AF /* Services.swift in Sources */,
 				71CD3C692A0E722200EC20AF /* R.generated.swift in Sources */,
 				718818B02A0C644300122885 /* ViewController.swift in Sources */,
 				7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */,
+				71CD3C782A107A3D00EC20AF /* NetworkFetcher.swift in Sources */,
 				718818AC2A0C644300122885 /* AppDelegate.swift in Sources */,
 				718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */,
 				71CD3C6F2A10072B00EC20AF /* DeviceCell.swift in Sources */,
 				7151B84C2A0DC8BE00686D35 /* AlarmCentral.swift in Sources */,
 				7151B8502A0E495100686D35 /* Device.swift in Sources */,
+				71CD3C742A10791300EC20AF /* ServicesProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
