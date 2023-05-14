@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum DeviceType {
+enum DeviceType: Codable {
     case video
     case alarm
 
@@ -23,11 +23,6 @@ enum DeviceType {
 }
 
 protocol Device {
-    var id: String { get }
     var name: String { get set }
-    var serial: String? { get set }
-    var macAddress: String? { get set }
-    var username: String? { get set }
-    var password: String { get set }
-    var type: DeviceType { get set }
+    func getImage() -> UIImage?
 }

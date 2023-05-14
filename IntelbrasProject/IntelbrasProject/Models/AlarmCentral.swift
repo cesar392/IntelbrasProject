@@ -6,19 +6,20 @@
 //
 
 import Foundation
+import UIKit
 
-struct AlarmCentral: Device {
+struct AlarmCentral: Device, Codable {
     let id: String
     var name: String
-    var serial: String? = nil
-    var macAddress: String?
-    var username: String? = nil
+    var macAddress: String
     var password: String
-    var type = DeviceType.alarm
+
+    func getImage() -> UIImage? {
+        return R.image.icAlarmDevice()
+    }
 }
 
 extension AlarmCentral {
-
     static func getMockAlarmCentrals() -> [AlarmCentral] {
         let alarmCentral1 = AlarmCentral(id: "1",
                                          name: "Alarm 1",
