@@ -11,39 +11,39 @@ import RxSwift
 class ViewModel {
 
     // MARK: - Variables
-    var alarmDisposable: Disposable?
-    var videoDisposable: Disposable?
+    private var alarmDisposable: Disposable?
+    private var videoDisposable: Disposable?
+    weak var viewDelegate: ViewDelegate?
     private let networkFetcher = NetworkFetcher(alarmCentralService: AlarmCentralService(),
                                                 videoDeviceService: VideoDeviceService())
 
-    lazy var devicesList: [Device] = {
-        var deviceList = [Device]()
-//        deviceList.append(contentsOf: AlarmCentral.getMockAlarmCentrals())
-//        deviceList.append(contentsOf: VideoDevice.getMockVideoDevices())
+    lazy var devicesList: [BaseDevice] = {
+        var deviceList = [BaseDevice]()
         return deviceList
     }()
 
     // MARK: - Fetch
-
-    internal func fetchAlarmCentral(onCompleted: @escaping () -> Void) {
+    internal func fetchAlarmCentral() {
         alarmDisposable = networkFetcher.fetchAlarmCentral(withToken: Constants.API_TOKEN)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] devices in
                 self?.devicesList.append(contentsOf: devices)
-            },
-                       onError: { [weak self] error in
+            }, onError: { [weak self] error in
                 //                TODO Handle errors
-            }, onCompleted: onCompleted)
+            }, onCompleted: { [weak self] in
+                self?.viewDelegate?.reloadTableView()
+            })
     }
 
-    internal func fetchVideoDevice(onCompleted: @escaping () -> Void) {
+    internal func fetchVideoDevice() {
         videoDisposable = networkFetcher.fetchVideoDevices(withToken: Constants.API_TOKEN)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] devices in
                 self?.devicesList.append(contentsOf: devices)
-            },
-                       onError: { [weak self] error in
+            }, onError: { [weak self] error in
                 //                TODO Handle errors
-            }, onCompleted: onCompleted)
+            }, onCompleted: { [weak self] in
+                self?.viewDelegate?.reloadTableView()
+            })
     }
 }

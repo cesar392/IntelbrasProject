@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ViewDelegate: AnyObject {
+    func reloadTableView()
+}
+
 class ViewController: UIViewController {
 
     // MARK: - UIComponents
@@ -18,18 +22,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Variables
-    let viewModel = ViewModel()
+    lazy var viewModel: ViewModel = {
+        let viewModel = ViewModel()
+        viewModel.viewDelegate = self
+        return viewModel
+    }()
 
     // MARK: - LifeCyle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        viewModel.fetchAlarmCentral() {
-            self.tableView.reloadData()
-        }
-        viewModel.fetchVideoDevice() {
-            self.tableView.reloadData()
-        }
+        viewModel.fetchAlarmCentral()
+        viewModel.fetchVideoDevice()
     }
 
     // MARK: - Setup Targets
@@ -62,11 +66,11 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - TableView extension
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.devicesList.count
     }
-
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: DeviceCell.identifier) as? DeviceCell {
@@ -76,5 +80,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             return UITableViewCell()
         }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let device = viewModel.devicesList[indexPath.row]
+    }
+}
+
+// MARK: - ViewDelegate extension
+extension ViewController: ViewDelegate {
+    func reloadTableView() {
+        self.tableView.reloadData()
     }
 }
