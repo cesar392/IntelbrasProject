@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2FFEE02DDA475D1FCCFEC052 /* Pods_IntelbrasProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */; };
-		71273FFC2A111244005686C0 /* BaseDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71273FFB2A111244005686C0 /* BaseDevice.swift */; };
+		71273FFC2A111244005686C0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71273FFB2A111244005686C0 /* Device.swift */; };
+		712740012A112B9A005686C0 /* DevicesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712740002A112B9A005686C0 /* DevicesDTO.swift */; };
+		712740042A115D39005686C0 /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712740032A115D39005686C0 /* FavoritesRepository.swift */; };
+		712740062A1168A0005686C0 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712740052A1168A0005686C0 /* FavoritesService.swift */; };
 		7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B8412A0C6C2D00686D35 /* Colors.swift */; };
 		7151B84A2A0DC61E00686D35 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B8492A0DC61E00686D35 /* Constants.swift */; };
 		7151B84C2A0DC8BE00686D35 /* AlarmCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */; };
@@ -23,14 +26,17 @@
 		71CD3C6B2A10065000EC20AF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C6A2A10065000EC20AF /* ViewModel.swift */; };
 		71CD3C6F2A10072B00EC20AF /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C6D2A10072B00EC20AF /* DeviceCell.swift */; };
 		71CD3C702A10072B00EC20AF /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CD3C6E2A10072B00EC20AF /* DeviceCell.xib */; };
-		71CD3C742A10791300EC20AF /* ServicesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C732A10791300EC20AF /* ServicesProtocol.swift */; };
-		71CD3C762A10793500EC20AF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C752A10793500EC20AF /* Services.swift */; };
-		71CD3C782A107A3D00EC20AF /* NetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C772A107A3D00EC20AF /* NetworkFetcher.swift */; };
+		71CD3C742A10791300EC20AF /* DeviceRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C732A10791300EC20AF /* DeviceRepositoryProtocol.swift */; };
+		71CD3C762A10793500EC20AF /* DeviceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C752A10793500EC20AF /* DeviceRepository.swift */; };
+		71CD3C782A107A3D00EC20AF /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C772A107A3D00EC20AF /* DeviceService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		683AA2B75305403921168FDC /* Pods-IntelbrasProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.debug.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.debug.xcconfig"; sourceTree = "<group>"; };
-		71273FFB2A111244005686C0 /* BaseDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDevice.swift; sourceTree = "<group>"; };
+		71273FFB2A111244005686C0 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		712740002A112B9A005686C0 /* DevicesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesDTO.swift; sourceTree = "<group>"; };
+		712740032A115D39005686C0 /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
+		712740052A1168A0005686C0 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 		7151B8412A0C6C2D00686D35 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7151B8492A0DC61E00686D35 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCentral.swift; sourceTree = "<group>"; };
@@ -47,9 +53,9 @@
 		71CD3C6A2A10065000EC20AF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		71CD3C6D2A10072B00EC20AF /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		71CD3C6E2A10072B00EC20AF /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
-		71CD3C732A10791300EC20AF /* ServicesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesProtocol.swift; sourceTree = "<group>"; };
-		71CD3C752A10793500EC20AF /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		71CD3C772A107A3D00EC20AF /* NetworkFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetcher.swift; sourceTree = "<group>"; };
+		71CD3C732A10791300EC20AF /* DeviceRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRepositoryProtocol.swift; sourceTree = "<group>"; };
+		71CD3C752A10793500EC20AF /* DeviceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRepository.swift; sourceTree = "<group>"; };
+		71CD3C772A107A3D00EC20AF /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 		7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.release.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.release.xcconfig"; sourceTree = "<group>"; };
 		C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelbrasProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -83,6 +89,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		712740022A115D0F005686C0 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				712740032A115D39005686C0 /* FavoritesRepository.swift */,
+				712740052A1168A0005686C0 /* FavoritesService.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		7151B8402A0C6C2D00686D35 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +111,10 @@
 		7151B8432A0DC52200686D35 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				71CD3C732A10791300EC20AF /* ServicesProtocol.swift */,
-				71CD3C752A10793500EC20AF /* Services.swift */,
-				71CD3C772A107A3D00EC20AF /* NetworkFetcher.swift */,
+				71CD3C732A10791300EC20AF /* DeviceRepositoryProtocol.swift */,
+				71CD3C752A10793500EC20AF /* DeviceRepository.swift */,
+				71CD3C772A107A3D00EC20AF /* DeviceService.swift */,
+				712740002A112B9A005686C0 /* DevicesDTO.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -133,7 +149,7 @@
 		7151B8472A0DC59D00686D35 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				71273FFB2A111244005686C0 /* BaseDevice.swift */,
+				71273FFB2A111244005686C0 /* Device.swift */,
 				7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */,
 				7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */,
 			);
@@ -169,6 +185,7 @@
 		718818AA2A0C644300122885 /* IntelbrasProject */ = {
 			isa = PBXGroup;
 			children = (
+				712740022A115D0F005686C0 /* Storage */,
 				7151B8432A0DC52200686D35 /* API */,
 				7151B8472A0DC59D00686D35 /* Models */,
 				7151B8482A0DC5BB00686D35 /* Views */,
@@ -330,17 +347,20 @@
 				71CD3C6B2A10065000EC20AF /* ViewModel.swift in Sources */,
 				7151B84E2A0DC9BC00686D35 /* VideoDevice.swift in Sources */,
 				7151B84A2A0DC61E00686D35 /* Constants.swift in Sources */,
-				71CD3C762A10793500EC20AF /* Services.swift in Sources */,
+				71CD3C762A10793500EC20AF /* DeviceRepository.swift in Sources */,
 				71CD3C692A0E722200EC20AF /* R.generated.swift in Sources */,
+				712740062A1168A0005686C0 /* FavoritesService.swift in Sources */,
 				718818B02A0C644300122885 /* ViewController.swift in Sources */,
-				71273FFC2A111244005686C0 /* BaseDevice.swift in Sources */,
+				71273FFC2A111244005686C0 /* Device.swift in Sources */,
 				7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */,
-				71CD3C782A107A3D00EC20AF /* NetworkFetcher.swift in Sources */,
+				71CD3C782A107A3D00EC20AF /* DeviceService.swift in Sources */,
 				718818AC2A0C644300122885 /* AppDelegate.swift in Sources */,
+				712740042A115D39005686C0 /* FavoritesRepository.swift in Sources */,
 				718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */,
 				71CD3C6F2A10072B00EC20AF /* DeviceCell.swift in Sources */,
 				7151B84C2A0DC8BE00686D35 /* AlarmCentral.swift in Sources */,
-				71CD3C742A10791300EC20AF /* ServicesProtocol.swift in Sources */,
+				71CD3C742A10791300EC20AF /* DeviceRepositoryProtocol.swift in Sources */,
+				712740012A112B9A005686C0 /* DevicesDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
