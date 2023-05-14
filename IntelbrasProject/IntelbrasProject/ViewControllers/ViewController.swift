@@ -6,10 +6,7 @@
 //
 
 import UIKit
-
-protocol ViewDelegate: AnyObject {
-    func reloadTableView()
-}
+import RxSwift
 
 class ViewController: UIViewController {
 
@@ -18,22 +15,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var videoButton: UIButton!
     @IBOutlet weak var alarmButton: UIButton!
-
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Variables
+    //    Should come from APPFactory
     lazy var viewModel: ViewModel = {
-        let viewModel = ViewModel()
-        viewModel.viewDelegate = self
+        let acRepository = AlarmCentralRepository(token: Constants.API_TOKEN)
+        let vdRepository = VideoDeviceRepository(token: Constants.API_TOKEN)
+        let favoritesRepository = InMemoryFavoriteRepository()
+        let favoriteService = FavoritesService(favoriteRepo: favoritesRepository)
+        let nwService = DeviceService(alarmCentralRepository: acRepository,
+                                      videoDeviceRepository: vdRepository,
+                                      favoritesRepository: favoritesRepository)
+        let viewModel = ViewModel(deviceService: nwService, favoriteService: favoriteService)
         return viewModel
     }()
+
+    var filteredDevices = [Device]()
+    let disposeBag = DisposeBag()
 
     // MARK: - LifeCyle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        viewModel.fetchAlarmCentral()
-        viewModel.fetchVideoDevice()
+        observeData()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.loadInitialData()
     }
 
     // MARK: - Setup Targets
@@ -42,21 +52,55 @@ class ViewController: UIViewController {
     @IBAction func didTapVideo(_ sender: UIButton) { didTapVideo() }
     @IBAction func didTapAlarm(_ sender: UIButton) { didTapAlarm() }
 
+    private func observeData() {
+        viewModel.filteredDevices.subscribe(
+            onNext: { [weak self] devices in
+                self?.filteredDevices = devices
+                self?.tableView.reloadData()
+            }).disposed(by: disposeBag)
+
+        viewModel.filter.subscribe(onNext: { [weak self] filter in
+            self?.resetButtons()
+            let activeButton = self?.getButton(from: filter)
+            activeButton?.tintColor = .colorPrimary
+        }).disposed(by: disposeBag)
+    }
+
+    private func getButton(from filter: DeviceFilter) -> UIButton {
+        switch filter {
+        case .all:
+            return dashboardButton
+        case.favorites:
+            return favoriteButton
+        case .videoDevices:
+            return videoButton
+        case .alarmCentrals:
+            return alarmButton
+        }
+    }
+
+    private func resetButtons() {
+        dashboardButton.tintColor = .customLightGray
+        favoriteButton.tintColor = .customLightGray
+        videoButton.tintColor = .customLightGray
+        alarmButton.tintColor = .customLightGray
+    }
+
     // MARK: - Actions
     private func didTapDashboard() {
-        viewModel.removeFilters()
+        viewModel.onDashboardSelected()
     }
 
     private func didTapFavorite() {
-        viewModel.filterFavorites()
+        viewModel.onFavoritesSelected()
     }
 
     private func didTapVideo() {
-        viewModel.filterVideoDevices()
+        viewModel.onVideoDevicesSelected()
     }
 
     private func didTapAlarm() {
-        viewModel.filterAlarmCentrals()
+        viewModel.onAlarmCentralsSelected()
     }
 
 
@@ -64,7 +108,6 @@ class ViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-
         tableView.register(UINib(nibName: DeviceCell.identifier, bundle: nil),
                            forCellReuseIdentifier: DeviceCell.identifier)
     }
@@ -73,12 +116,12 @@ class ViewController: UIViewController {
 // MARK: - TableView extension
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.filteredDevices.count
+        return self.filteredDevices.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: DeviceCell.identifier) as? DeviceCell {
-            let currentDevice = viewModel.filteredDevices[indexPath.row]
+            let currentDevice = filteredDevices[indexPath.row]
             cell.setupViewWith(device: currentDevice)
             return cell
         } else {
@@ -87,13 +130,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let device = viewModel.filteredDevices[indexPath.row]
-    }
-}
-
-// MARK: - ViewDelegate extension
-extension ViewController: ViewDelegate {
-    func reloadTableView() {
-        self.tableView.reloadData()
+        let device = filteredDevices[indexPath.row]
+        viewModel.toggleFavorite(device: device)
     }
 }

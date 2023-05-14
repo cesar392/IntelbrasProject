@@ -50,7 +50,12 @@ class ViewModel {
     }
 
     // MARK: - Fetch
-    internal func fetchAlarmCentral() {
+    internal func loadInitialData() {
+        fetchAlarmCentral()
+        fetchVideoDevice()
+    }
+
+    private func fetchAlarmCentral() {
         deviceService.fetchAlarmCentral()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] devices in
@@ -61,7 +66,7 @@ class ViewModel {
             }).disposed(by: disposeBag)
     }
 
-    internal func fetchVideoDevice() {
+    private func fetchVideoDevice() {
         deviceService.fetchVideoDevices()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] devices in
