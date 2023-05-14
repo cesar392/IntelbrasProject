@@ -17,17 +17,17 @@ class ViewModel {
     private let networkFetcher = NetworkFetcher(alarmCentralService: AlarmCentralService(),
                                                 videoDeviceService: VideoDeviceService())
 
-    lazy var devicesList: [BaseDevice] = {
-        var deviceList = [BaseDevice]()
-        return deviceList
-    }()
+    private var devicesList = [BaseDevice]()
+    lazy var filteredDevices = [BaseDevice]()
 
     // MARK: - Fetch
     internal func fetchAlarmCentral() {
         alarmDisposable = networkFetcher.fetchAlarmCentral(withToken: Constants.API_TOKEN)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] devices in
-                self?.devicesList.append(contentsOf: devices)
+                guard let self = self else { return }
+                self.devicesList.append(contentsOf: devices)
+                self.filteredDevices = self.devicesList
             }, onError: { [weak self] error in
                 //                TODO Handle errors
             }, onCompleted: { [weak self] in
@@ -39,11 +39,36 @@ class ViewModel {
         videoDisposable = networkFetcher.fetchVideoDevices(withToken: Constants.API_TOKEN)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] devices in
-                self?.devicesList.append(contentsOf: devices)
+                guard let self = self else { return }
+                self.devicesList.append(contentsOf: devices)
+                self.filteredDevices = self.devicesList
             }, onError: { [weak self] error in
                 //                TODO Handle errors
             }, onCompleted: { [weak self] in
                 self?.viewDelegate?.reloadTableView()
             })
+    }
+
+    // MARK: - Fetch
+    internal func removeFilters() {
+        self.filteredDevices = devicesList
+        viewDelegate?.reloadTableView()
+    }
+
+    internal func filterFavorites() {
+    }
+
+    internal func filterVideoDevices() {
+        self.filteredDevices = devicesList.filter({ device in
+            device is VideoDevice
+        })
+        viewDelegate?.reloadTableView()
+    }
+
+    internal func filterAlarmCentrals() {
+        self.filteredDevices = devicesList.filter({ device in
+            device is AlarmCentral
+        })
+        viewDelegate?.reloadTableView()
     }
 }

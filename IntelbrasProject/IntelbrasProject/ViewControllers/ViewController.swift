@@ -37,22 +37,26 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Setup Targets
-    @IBAction func didTapDashboard(_ sender: Any) { didTapDashboard() }
-    @IBAction func didTapFavorite(_ sender: Any) { didTapFavorite() }
-    @IBAction func didTapVideo(_ sender: Any) { didTapVideo() }
-    @IBAction func didTapAlarm(_ sender: Any) { didTapAlarm() }
+    @IBAction func didTapDashboard(_ sender: UIButton) { didTapDashboard() }
+    @IBAction func didTapFavorite(_ sender: UIButton) { didTapFavorite() }
+    @IBAction func didTapVideo(_ sender: UIButton) { didTapVideo() }
+    @IBAction func didTapAlarm(_ sender: UIButton) { didTapAlarm() }
 
     // MARK: - Actions
     private func didTapDashboard() {
+        viewModel.removeFilters()
     }
 
     private func didTapFavorite() {
+        viewModel.filterFavorites()
     }
 
     private func didTapVideo() {
+        viewModel.filterVideoDevices()
     }
 
     private func didTapAlarm() {
+        viewModel.filterAlarmCentrals()
     }
 
 
@@ -69,12 +73,12 @@ class ViewController: UIViewController {
 // MARK: - TableView extension
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.devicesList.count
+        return self.viewModel.filteredDevices.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: DeviceCell.identifier) as? DeviceCell {
-            let currentDevice = viewModel.devicesList[indexPath.row]
+            let currentDevice = viewModel.filteredDevices[indexPath.row]
             cell.setupViewWith(device: currentDevice)
             return cell
         } else {
@@ -83,7 +87,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let device = viewModel.devicesList[indexPath.row]
+        let device = viewModel.filteredDevices[indexPath.row]
     }
 }
 
