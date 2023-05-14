@@ -11,64 +11,97 @@ import RxSwift
 class ViewModel {
 
     // MARK: - Variables
-    private var alarmDisposable: Disposable?
-    private var videoDisposable: Disposable?
-    weak var viewDelegate: ViewDelegate?
-    private let networkFetcher = NetworkFetcher(alarmCentralService: AlarmCentralService(),
-                                                videoDeviceService: VideoDeviceService())
+    private let disposeBag = DisposeBag()
 
-    private var devicesList = [BaseDevice]()
-    lazy var filteredDevices = [BaseDevice]()
+    private let deviceService: DeviceService
+    private let favoriteService: FavoritesServiceProtocol
+
+    private let _filter = BehaviorSubject<DeviceFilter>(value: .all)
+    lazy var filter = _filter.asObservable()
+
+    private let alarmCentrals = BehaviorSubject(value: [AlarmCentral]())
+    private let videoDevices = BehaviorSubject(value: [VideoDevice]())
+
+    private lazy var allDevices = Observable.combineLatest(alarmCentrals, videoDevices)
+        .map{ alarmList, videoList in
+            let devicesList: [Device] = alarmList + videoList
+            return devicesList
+    }
+
+    lazy var filteredDevices = Observable.combineLatest(allDevices, filter)
+        .map{ devices, filter in
+            return devices.filter({ device in
+                switch filter {
+                case .all:
+                    return true
+                case .alarmCentrals:
+                    return device is AlarmCentral
+                case .videoDevices:
+                    return device is VideoDevice
+                case .favorites:
+                    return device.favorite
+                }
+            })
+    }
+
+    init(deviceService: DeviceService, favoriteService: FavoritesServiceProtocol) {
+        self.deviceService = deviceService
+        self.favoriteService = favoriteService
+    }
 
     // MARK: - Fetch
     internal func fetchAlarmCentral() {
-        alarmDisposable = networkFetcher.fetchAlarmCentral(withToken: Constants.API_TOKEN)
+        deviceService.fetchAlarmCentral()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] devices in
                 guard let self = self else { return }
-                self.devicesList.append(contentsOf: devices)
-                self.filteredDevices = self.devicesList
-            }, onError: { [weak self] error in
+                alarmCentrals.onNext(devices)
+            }, onError: { error in
                 //                TODO Handle errors
-            }, onCompleted: { [weak self] in
-                self?.viewDelegate?.reloadTableView()
-            })
+            }).disposed(by: disposeBag)
     }
 
     internal func fetchVideoDevice() {
-        videoDisposable = networkFetcher.fetchVideoDevices(withToken: Constants.API_TOKEN)
+        deviceService.fetchVideoDevices()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] devices in
                 guard let self = self else { return }
-                self.devicesList.append(contentsOf: devices)
-                self.filteredDevices = self.devicesList
-            }, onError: { [weak self] error in
+                videoDevices.onNext(devices)
+            }, onError: { error in
                 //                TODO Handle errors
-            }, onCompleted: { [weak self] in
-                self?.viewDelegate?.reloadTableView()
-            })
+            }).disposed(by: disposeBag)
     }
 
-    // MARK: - Fetch
-    internal func removeFilters() {
-        self.filteredDevices = devicesList
-        viewDelegate?.reloadTableView()
+    // MARK: - Filter
+    internal func onDashboardSelected() {
+        self._filter.onNext(.all)
     }
 
-    internal func filterFavorites() {
+    internal func onFavoritesSelected() {
+        self._filter.onNext(.favorites)
     }
 
-    internal func filterVideoDevices() {
-        self.filteredDevices = devicesList.filter({ device in
-            device is VideoDevice
-        })
-        viewDelegate?.reloadTableView()
+    internal func onVideoDevicesSelected() {
+        self._filter.onNext(.videoDevices)
     }
 
-    internal func filterAlarmCentrals() {
-        self.filteredDevices = devicesList.filter({ device in
-            device is AlarmCentral
-        })
-        viewDelegate?.reloadTableView()
+    internal func onAlarmCentralsSelected() {
+        self._filter.onNext(.alarmCentrals)
+    }
+
+    internal func toggleFavorite(device: Device) {
+        if device.favorite {
+            favoriteService.removeFavorite(id: device.id)
+        } else {
+            favoriteService.addFavorite(id: device.id)
+        }
     }
 }
+
+enum DeviceFilter {
+    case all
+    case favorites
+    case videoDevices
+    case alarmCentrals
+}
+
