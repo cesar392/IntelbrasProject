@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class AlarmCentralRepository: AlarmCentralRepositoryProtocol {
+class AlarmCentralRepository: AlarmCentralRepositoryProtocol, IntelbrasAPIRequestHandler {
 
     private let token: String
 
@@ -17,46 +17,17 @@ class AlarmCentralRepository: AlarmCentralRepositoryProtocol {
     }
 
     func fetchAlarmCentral() -> Observable<[AlarmCentralDTO]> {
-        return Observable.create { observer -> Disposable in
+        let alarmResponse: Observable<AlarmCentralResponse> = Observable.create {
+            observer -> Disposable in
             var request = URLRequest(url: URL(string: Constants.alarmCentralsURL)!)
             request.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
-                    observer.onError(error)
-                    return
-                }
-
-                guard let httpResponse = response as? HTTPURLResponse,
-                        (200...299).contains(httpResponse.statusCode) else {
-                    observer.onError(APIError.invalidResponse)
-                    return
-                }
-
-                guard let data = data else {
-                    observer.onError(APIError.noData)
-                    return
-                }
-
-                do {
-                    let decoder = JSONDecoder()
-                    let response = try decoder.decode(AlarmCentralResponse.self, from: data)
-                    observer.onNext(response.data)
-                    observer.onCompleted()
-                } catch {
-                    observer.onError(APIError.decodingError)
-                }
-            }
-
-            task.resume()
-
-            return Disposables.create {
-                task.cancel()
-            }
+            return self.handleRequest(observer: observer, urlRequest: request)
         }
+        return alarmResponse.map({ $0.data })
     }
 }
 
-class VideoDeviceRepository: VideoDeviceRepositoryProtocol {
+class VideoDeviceRepository: VideoDeviceRepositoryProtocol, IntelbrasAPIRequestHandler {
 
     private let token: String
 
@@ -64,44 +35,14 @@ class VideoDeviceRepository: VideoDeviceRepositoryProtocol {
         self.token = token
     }
 
-
     func fetchVideoDevices() -> Observable<[VideoDeviceDTO]> {
-        return Observable.create { observer -> Disposable in
+        let videoResponse: Observable<VideoDeviceResponse> = Observable.create {
+            observer -> Disposable in
             var request = URLRequest(url: URL(string: Constants.videoDevicesURL)!)
             request.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
-                    observer.onError(error)
-                    return
-                }
-
-                guard let httpResponse = response as? HTTPURLResponse,
-                      (200...299).contains(httpResponse.statusCode) else {
-                    observer.onError(APIError.invalidResponse)
-                    return
-                }
-
-                guard let data = data else {
-                    observer.onError(APIError.noData)
-                    return
-                }
-
-                do {
-                    let decoder = JSONDecoder()
-                    let response = try decoder.decode(VideoDeviceResponse.self, from: data)
-                    observer.onNext(response.data)
-                    observer.onCompleted()
-                } catch {
-                    observer.onError(APIError.decodingError)
-                }
-            }
-
-            task.resume()
-
-            return Disposables.create {
-                task.cancel()
-            }
+            return self.handleRequest(observer: observer, urlRequest: request)
         }
+        return videoResponse.map({ $0.data })
     }
 }
 
@@ -109,6 +50,7 @@ enum APIError: Error {
     case invalidResponse
     case noData
     case decodingError
+    case missingConnection
 }
 
 struct AlarmCentralResponse: Codable {
