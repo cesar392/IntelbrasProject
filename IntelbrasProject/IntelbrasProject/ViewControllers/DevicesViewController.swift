@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class ViewController: UIViewController {
+class DevicesViewController: UIViewController {
 
     // MARK: - UIComponents
     @IBOutlet weak var dashboardButton: UIButton!
@@ -18,21 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Variables
-    //    Should come from APPFactory
-    lazy var viewModel: ViewModel = {
-        let acRepository = AlarmCentralRepository(token: Constants.API_TOKEN)
-        let vdRepository = VideoDeviceRepository(token: Constants.API_TOKEN)
-        let favoritesRepository = InMemoryFavoriteRepository()
-        let favoriteService = FavoritesService(favoriteRepo: favoritesRepository)
-        let nwService = DeviceService(alarmCentralRepository: acRepository,
-                                      videoDeviceRepository: vdRepository,
-                                      favoritesRepository: favoritesRepository)
-        let viewModel = ViewModel(deviceService: nwService, favoriteService: favoriteService)
-        return viewModel
-    }()
-
-    var filteredDevices = [Device]()
-    let disposeBag = DisposeBag()
+    private let viewModel: DevicesViewModel = ViewModelFactory.getDevicesViewModel()
+    private var filteredDevices = [Device]()
+    private let disposeBag = DisposeBag()
 
     // MARK: - LifeCyle
     override func viewDidLoad() {
@@ -114,7 +102,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - TableView extension
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension DevicesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.filteredDevices.count
     }

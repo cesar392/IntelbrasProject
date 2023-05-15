@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class ViewModel {
+class DevicesViewModel {
 
     // MARK: - Variables
     private let disposeBag = DisposeBag()
