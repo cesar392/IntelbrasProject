@@ -21,7 +21,7 @@ class DeviceService {
         self.favoritesRepository = favoritesRepository
     }
 
-    func fetchAlarmCentral() -> Observable<[AlarmCentral]> {
+    internal func fetchAlarmCentral() -> Observable<[AlarmCentral]> {
         let alarmCentralsDTO = alarmCentralRepository.fetchAlarmCentral()
         return Observable.combineLatest(alarmCentralsDTO, favoritesRepository.favorites)
             .map({ dtoList, favorites in
@@ -39,7 +39,7 @@ class DeviceService {
             })
     }
 
-    func fetchVideoDevices() -> Observable<[VideoDevice]> {
+    internal func fetchVideoDevices() -> Observable<[VideoDevice]> {
         let videoDevicesDTO = videoDeviceRepository.fetchVideoDevices()
         return Observable.combineLatest(videoDevicesDTO, favoritesRepository.favorites)
             .map({ dtoList, favorites in
@@ -56,5 +56,9 @@ class DeviceService {
                     )
                 })
             })
+    }
+
+    internal func createVideoDeviceObject(_ device: CreationVideoDeviceParameters) -> Completable {
+        return videoDeviceRepository.createVideoDevice(device)
     }
 }

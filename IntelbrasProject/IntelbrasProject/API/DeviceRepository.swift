@@ -44,6 +44,34 @@ class VideoDeviceRepository: VideoDeviceRepositoryProtocol, IntelbrasAPIRequestH
         }
         return videoResponse.map({ $0.data })
     }
+
+    func createVideoDevice(_ device: CreationVideoDeviceParameters) -> Completable {
+        Completable.create(subscribe: { observer in
+            let url = URL(string: Constants.videoDevicesURL)!
+
+            let jsonData = try! JSONSerialization.data(withJSONObject: device, options: [])
+
+            var request = URLRequest(url: url)
+            request.httpMethod = HTTPMethod.post.rawValue
+            request.setValue("Bearer " + self.token, forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = jsonData
+
+            return self.handleRequest(observer: observer, urlRequest: request)
+        })
+    }
+
+    func deleteVideoDevice(withID id: String) -> Completable {
+        Completable.create(subscribe: { observer in
+            let urlString = Constants.videoDevicesURL + id
+            let url = URL(string: urlString)!
+            var request = URLRequest(url: url)
+            request.httpMethod = HTTPMethod.delete.rawValue
+            request.addValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
+
+            return self.handleRequest(observer: observer, urlRequest: request)
+        })
+    }
 }
 
 enum APIError: Error {
@@ -51,6 +79,14 @@ enum APIError: Error {
     case noData
     case decodingError
     case missingConnection
+    case unknown
+}
+
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case patch = "PATCH"
+    case delete = "DELETE"
 }
 
 struct AlarmCentralResponse: Codable {

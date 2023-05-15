@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FFEE02DDA475D1FCCFEC052 /* Pods_IntelbrasProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */; };
+		11F32F71EA7728EBC329882E /* Pods_IntelbrasProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE701BA8206182C0D996DF9 /* Pods_IntelbrasProject.framework */; };
 		71273FFC2A111244005686C0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71273FFB2A111244005686C0 /* Device.swift */; };
 		712740012A112B9A005686C0 /* DevicesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712740002A112B9A005686C0 /* DevicesDTO.swift */; };
 		712740042A115D39005686C0 /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712740032A115D39005686C0 /* FavoritesRepository.swift */; };
@@ -18,12 +18,18 @@
 		7151B84E2A0DC9BC00686D35 /* VideoDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */; };
 		718818AC2A0C644300122885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AB2A0C644300122885 /* AppDelegate.swift */; };
 		718818AE2A0C644300122885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AD2A0C644300122885 /* SceneDelegate.swift */; };
-		718818B02A0C644300122885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AF2A0C644300122885 /* ViewController.swift */; };
+		718818B02A0C644300122885 /* DevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718818AF2A0C644300122885 /* DevicesViewController.swift */; };
 		718818B32A0C644300122885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718818B12A0C644300122885 /* Main.storyboard */; };
 		718818B52A0C644400122885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718818B42A0C644400122885 /* Assets.xcassets */; };
 		718818B82A0C644400122885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718818B62A0C644400122885 /* LaunchScreen.storyboard */; };
+		71AF38432A118DB100368DA8 /* CreateDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF38422A118DB100368DA8 /* CreateDeviceViewController.swift */; };
+		71C21AFF2A11968C00F6EA6F /* CreateDeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C21AFE2A11968C00F6EA6F /* CreateDeviceViewModel.swift */; };
+		71C21B012A1233FC00F6EA6F /* CreationVideoDeviceParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C21B002A1233FC00F6EA6F /* CreationVideoDeviceParameters.swift */; };
+		71C21B042A12427400F6EA6F /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C21B032A12427400F6EA6F /* ViewModelFactory.swift */; };
+		71C21B542A12470C00F6EA6F /* IntelbrasProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C21B532A12470C00F6EA6F /* IntelbrasProjectTests.swift */; };
+		71C21B5C2A12479700F6EA6F /* InMemoryFavoriteRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C21B5B2A12479700F6EA6F /* InMemoryFavoriteRepositoryTests.swift */; };
 		71CD3C692A0E722200EC20AF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C682A0E722200EC20AF /* R.generated.swift */; };
-		71CD3C6B2A10065000EC20AF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C6A2A10065000EC20AF /* ViewModel.swift */; };
+		71CD3C6B2A10065000EC20AF /* DevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C6A2A10065000EC20AF /* DevicesViewModel.swift */; };
 		71CD3C6F2A10072B00EC20AF /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C6D2A10072B00EC20AF /* DeviceCell.swift */; };
 		71CD3C702A10072B00EC20AF /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CD3C6E2A10072B00EC20AF /* DeviceCell.xib */; };
 		71CD3C742A10791300EC20AF /* DeviceRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C732A10791300EC20AF /* DeviceRepositoryProtocol.swift */; };
@@ -31,8 +37,19 @@
 		71CD3C782A107A3D00EC20AF /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD3C772A107A3D00EC20AF /* DeviceService.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		71C21B552A12470C00F6EA6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 718818A02A0C644300122885 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 718818A72A0C644300122885;
+			remoteInfo = IntelbrasProject;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		683AA2B75305403921168FDC /* Pods-IntelbrasProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.debug.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.debug.xcconfig"; sourceTree = "<group>"; };
+		0FE701BA8206182C0D996DF9 /* Pods_IntelbrasProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelbrasProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EE86715FB834451E712EBA3 /* Pods-IntelbrasProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.release.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.release.xcconfig"; sourceTree = "<group>"; };
 		71273FFB2A111244005686C0 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		712740002A112B9A005686C0 /* DevicesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesDTO.swift; sourceTree = "<group>"; };
 		712740032A115D39005686C0 /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
@@ -44,20 +61,26 @@
 		718818A82A0C644300122885 /* IntelbrasProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelbrasProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718818AB2A0C644300122885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718818AD2A0C644300122885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		718818AF2A0C644300122885 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		718818AF2A0C644300122885 /* DevicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewController.swift; sourceTree = "<group>"; };
 		718818B22A0C644300122885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		718818B42A0C644400122885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		718818B72A0C644400122885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		718818B92A0C644400122885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71AF38422A118DB100368DA8 /* CreateDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeviceViewController.swift; sourceTree = "<group>"; };
+		71C21AFE2A11968C00F6EA6F /* CreateDeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeviceViewModel.swift; sourceTree = "<group>"; };
+		71C21B002A1233FC00F6EA6F /* CreationVideoDeviceParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationVideoDeviceParameters.swift; sourceTree = "<group>"; };
+		71C21B032A12427400F6EA6F /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		71C21B512A12470B00F6EA6F /* IntelbrasProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelbrasProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C21B532A12470C00F6EA6F /* IntelbrasProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntelbrasProjectTests.swift; sourceTree = "<group>"; };
+		71C21B5B2A12479700F6EA6F /* InMemoryFavoriteRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFavoriteRepositoryTests.swift; sourceTree = "<group>"; };
 		71CD3C682A0E722200EC20AF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		71CD3C6A2A10065000EC20AF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		71CD3C6A2A10065000EC20AF /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
 		71CD3C6D2A10072B00EC20AF /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		71CD3C6E2A10072B00EC20AF /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
 		71CD3C732A10791300EC20AF /* DeviceRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRepositoryProtocol.swift; sourceTree = "<group>"; };
 		71CD3C752A10793500EC20AF /* DeviceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRepository.swift; sourceTree = "<group>"; };
 		71CD3C772A107A3D00EC20AF /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
-		7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.release.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.release.xcconfig"; sourceTree = "<group>"; };
-		C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelbrasProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD2E5E3797DEB828A8C49BD6 /* Pods-IntelbrasProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.debug.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +88,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FFEE02DDA475D1FCCFEC052 /* Pods_IntelbrasProject.framework in Frameworks */,
+				11F32F71EA7728EBC329882E /* Pods_IntelbrasProject.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71C21B4E2A12470B00F6EA6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,18 +105,10 @@
 		2DD3FE6BED8D2547B06BBB3D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				683AA2B75305403921168FDC /* Pods-IntelbrasProject.debug.xcconfig */,
-				7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */,
+				CD2E5E3797DEB828A8C49BD6 /* Pods-IntelbrasProject.debug.xcconfig */,
+				6EE86715FB834451E712EBA3 /* Pods-IntelbrasProject.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		4AE6EB24A6957BE52C6907AF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C58D0F0AB3D66F00CAC19F7C /* Pods_IntelbrasProject.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		712740022A115D0F005686C0 /* Storage */ = {
@@ -122,7 +144,8 @@
 		7151B8442A0DC53E00686D35 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				71CD3C6A2A10065000EC20AF /* ViewModel.swift */,
+				71CD3C6A2A10065000EC20AF /* DevicesViewModel.swift */,
+				71C21AFE2A11968C00F6EA6F /* CreateDeviceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -130,7 +153,8 @@
 		7151B8452A0DC54F00686D35 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				718818AF2A0C644300122885 /* ViewController.swift */,
+				718818AF2A0C644300122885 /* DevicesViewController.swift */,
+				71AF38422A118DB100368DA8 /* CreateDeviceViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +176,7 @@
 				71273FFB2A111244005686C0 /* Device.swift */,
 				7151B84B2A0DC8BE00686D35 /* AlarmCentral.swift */,
 				7151B84D2A0DC9BC00686D35 /* VideoDevice.swift */,
+				71C21B002A1233FC00F6EA6F /* CreationVideoDeviceParameters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,9 +193,10 @@
 			isa = PBXGroup;
 			children = (
 				718818AA2A0C644300122885 /* IntelbrasProject */,
+				71C21B522A12470B00F6EA6F /* IntelbrasProjectTests */,
 				718818A92A0C644300122885 /* Products */,
 				2DD3FE6BED8D2547B06BBB3D /* Pods */,
-				4AE6EB24A6957BE52C6907AF /* Frameworks */,
+				CAA44958BC40512F16AA9410 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				718818A82A0C644300122885 /* IntelbrasProject.app */,
+				71C21B512A12470B00F6EA6F /* IntelbrasProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +212,7 @@
 		718818AA2A0C644300122885 /* IntelbrasProject */ = {
 			isa = PBXGroup;
 			children = (
+				71C21B022A12426600F6EA6F /* AppFactory */,
 				712740022A115D0F005686C0 /* Storage */,
 				7151B8432A0DC52200686D35 /* API */,
 				7151B8472A0DC59D00686D35 /* Models */,
@@ -199,6 +227,31 @@
 			path = IntelbrasProject;
 			sourceTree = "<group>";
 		};
+		71C21B022A12426600F6EA6F /* AppFactory */ = {
+			isa = PBXGroup;
+			children = (
+				71C21B032A12427400F6EA6F /* ViewModelFactory.swift */,
+			);
+			path = AppFactory;
+			sourceTree = "<group>";
+		};
+		71C21B522A12470B00F6EA6F /* IntelbrasProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				71C21B5A2A12477400F6EA6F /* Storage */,
+				71C21B532A12470C00F6EA6F /* IntelbrasProjectTests.swift */,
+			);
+			path = IntelbrasProjectTests;
+			sourceTree = "<group>";
+		};
+		71C21B5A2A12477400F6EA6F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				71C21B5B2A12479700F6EA6F /* InMemoryFavoriteRepositoryTests.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		71CD3C6C2A1006EC00EC20AF /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +261,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		CAA44958BC40512F16AA9410 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FE701BA8206182C0D996DF9 /* Pods_IntelbrasProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,12 +276,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 718818BC2A0C644400122885 /* Build configuration list for PBXNativeTarget "IntelbrasProject" */;
 			buildPhases = (
-				66817040E863B936382D8555 /* [CP] Check Pods Manifest.lock */,
+				5CF6E1CA962AAA5FF0DF3756 /* [CP] Check Pods Manifest.lock */,
 				71178E6A2A0E6FC8006D9907 /* ShellScript */,
 				718818A42A0C644300122885 /* Sources */,
 				718818A52A0C644300122885 /* Frameworks */,
 				718818A62A0C644300122885 /* Resources */,
-				DC811037707A169582C92E50 /* [CP] Embed Pods Frameworks */,
+				A1DA21B357D675A3B916AB7C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +291,24 @@
 			productName = IntelbrasProject;
 			productReference = 718818A82A0C644300122885 /* IntelbrasProject.app */;
 			productType = "com.apple.product-type.application";
+		};
+		71C21B502A12470B00F6EA6F /* IntelbrasProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71C21B572A12470C00F6EA6F /* Build configuration list for PBXNativeTarget "IntelbrasProjectTests" */;
+			buildPhases = (
+				71C21B4D2A12470B00F6EA6F /* Sources */,
+				71C21B4E2A12470B00F6EA6F /* Frameworks */,
+				71C21B4F2A12470B00F6EA6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71C21B562A12470C00F6EA6F /* PBXTargetDependency */,
+			);
+			name = IntelbrasProjectTests;
+			productName = IntelbrasProjectTests;
+			productReference = 71C21B512A12470B00F6EA6F /* IntelbrasProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -243,6 +322,10 @@
 				TargetAttributes = {
 					718818A72A0C644300122885 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					71C21B502A12470B00F6EA6F = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 718818A72A0C644300122885;
 					};
 				};
 			};
@@ -260,6 +343,7 @@
 			projectRoot = "";
 			targets = (
 				718818A72A0C644300122885 /* IntelbrasProject */,
+				71C21B502A12470B00F6EA6F /* IntelbrasProjectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -276,10 +360,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71C21B4F2A12470B00F6EA6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		66817040E863B936382D8555 /* [CP] Check Pods Manifest.lock */ = {
+		5CF6E1CA962AAA5FF0DF3756 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,7 +411,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		DC811037707A169582C92E50 /* [CP] Embed Pods Frameworks */ = {
+		A1DA21B357D675A3B916AB7C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -344,15 +435,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71CD3C6B2A10065000EC20AF /* ViewModel.swift in Sources */,
+				71CD3C6B2A10065000EC20AF /* DevicesViewModel.swift in Sources */,
 				7151B84E2A0DC9BC00686D35 /* VideoDevice.swift in Sources */,
+				71AF38432A118DB100368DA8 /* CreateDeviceViewController.swift in Sources */,
 				7151B84A2A0DC61E00686D35 /* Constants.swift in Sources */,
 				71CD3C762A10793500EC20AF /* DeviceRepository.swift in Sources */,
+				71C21B012A1233FC00F6EA6F /* CreationVideoDeviceParameters.swift in Sources */,
 				71CD3C692A0E722200EC20AF /* R.generated.swift in Sources */,
 				712740062A1168A0005686C0 /* FavoritesService.swift in Sources */,
-				718818B02A0C644300122885 /* ViewController.swift in Sources */,
+				718818B02A0C644300122885 /* DevicesViewController.swift in Sources */,
 				71273FFC2A111244005686C0 /* Device.swift in Sources */,
 				7151B8422A0C6C2D00686D35 /* Colors.swift in Sources */,
+				71C21AFF2A11968C00F6EA6F /* CreateDeviceViewModel.swift in Sources */,
+				71C21B042A12427400F6EA6F /* ViewModelFactory.swift in Sources */,
 				71CD3C782A107A3D00EC20AF /* DeviceService.swift in Sources */,
 				718818AC2A0C644300122885 /* AppDelegate.swift in Sources */,
 				712740042A115D39005686C0 /* FavoritesRepository.swift in Sources */,
@@ -364,7 +459,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71C21B4D2A12470B00F6EA6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71C21B542A12470C00F6EA6F /* IntelbrasProjectTests.swift in Sources */,
+				71C21B5C2A12479700F6EA6F /* InMemoryFavoriteRepositoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71C21B562A12470C00F6EA6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 718818A72A0C644300122885 /* IntelbrasProject */;
+			targetProxy = 71C21B552A12470C00F6EA6F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		718818B12A0C644300122885 /* Main.storyboard */ = {
@@ -502,7 +614,7 @@
 		};
 		718818BD2A0C644400122885 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 683AA2B75305403921168FDC /* Pods-IntelbrasProject.debug.xcconfig */;
+			baseConfigurationReference = CD2E5E3797DEB828A8C49BD6 /* Pods-IntelbrasProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -531,7 +643,7 @@
 		};
 		718818BE2A0C644400122885 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7443C39FE9FB08A725F6B817 /* Pods-IntelbrasProject.release.xcconfig */;
+			baseConfigurationReference = 6EE86715FB834451E712EBA3 /* Pods-IntelbrasProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -558,6 +670,42 @@
 			};
 			name = Release;
 		};
+		71C21B582A12470C00F6EA6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95VSC357HD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = IntelbrasProject.IntelbrasProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IntelbrasProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IntelbrasProject";
+			};
+			name = Debug;
+		};
+		71C21B592A12470C00F6EA6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95VSC357HD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = IntelbrasProject.IntelbrasProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IntelbrasProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IntelbrasProject";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -575,6 +723,15 @@
 			buildConfigurations = (
 				718818BD2A0C644400122885 /* Debug */,
 				718818BE2A0C644400122885 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71C21B572A12470C00F6EA6F /* Build configuration list for PBXNativeTarget "IntelbrasProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71C21B582A12470C00F6EA6F /* Debug */,
+				71C21B592A12470C00F6EA6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -57,6 +57,7 @@ class DevicesViewModel {
 
     private func fetchAlarmCentral() {
         deviceService.fetchAlarmCentral()
+            .subscribe(on: SerialDispatchQueueScheduler(qos: .background))
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] devices in
                 guard let self = self else { return }
@@ -68,6 +69,7 @@ class DevicesViewModel {
 
     private func fetchVideoDevice() {
         deviceService.fetchVideoDevices()
+            .subscribe(on: SerialDispatchQueueScheduler(qos: .background))
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] devices in
                 guard let self = self else { return }
