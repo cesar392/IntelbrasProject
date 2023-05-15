@@ -30,6 +30,16 @@ Este projeto é uma aplicação iOS que permite gerenciar dispositivos de vídeo
 -   Biblioteca: RxSwift
 -   Gerenciador de dependências: CocoaPods
 
+## Arquitetura
+
+Este projeto segue a arquitetura MVVM (Model-View-ViewModel) com uma camada adicional de Service e Repository. A estrutura geral da arquitetura é a seguinte:
+
+-   **Model**: Representa os dados do aplicativo, incluindo as entidades e os objetos de transferência de dados (DTOs).
+-   **View**: Responsável pela exibição dos elementos visuais na interface do usuário. Neste projeto, as Views são implementadas através de ViewControllers e Storyboards.
+-   **ViewModel**: Fornece a lógica de apresentação para as Views. É responsável por processar os dados e prepará-los para serem exibidos pela View. Além disso, também lida com a interação do usuário e ações relacionadas a ela.
+-   **Service**: Faz a comunicação com serviços externos, como APIs, e lida com as requisições e respostas.
+-   **Repository**: Gerencia o acesso aos dados, seja por meio de serviços externos, bancos de dados ou outros mecanismos de armazenamento.
+
 ## Como Executar o Projeto
 
 1.  Clone este repositório em sua máquina local.
