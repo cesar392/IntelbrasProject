@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11F32F71EA7728EBC329882E /* Pods_IntelbrasProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE701BA8206182C0D996DF9 /* Pods_IntelbrasProject.framework */; };
+		5456CA4577537C4564DD8CEF /* Pods_IntelbrasProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7EBB6749EEF970E2182BC5 /* Pods_IntelbrasProjectTests.framework */; };
 		71273FFC2A111244005686C0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71273FFB2A111244005686C0 /* Device.swift */; };
 		712740012A112B9A005686C0 /* DevicesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712740002A112B9A005686C0 /* DevicesDTO.swift */; };
 		712740042A115D39005686C0 /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712740032A115D39005686C0 /* FavoritesRepository.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		0FE701BA8206182C0D996DF9 /* Pods_IntelbrasProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelbrasProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C7EBB6749EEF970E2182BC5 /* Pods_IntelbrasProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelbrasProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE86715FB834451E712EBA3 /* Pods-IntelbrasProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.release.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.release.xcconfig"; sourceTree = "<group>"; };
 		71273FFB2A111244005686C0 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		712740002A112B9A005686C0 /* DevicesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesDTO.swift; sourceTree = "<group>"; };
@@ -80,7 +82,9 @@
 		71CD3C732A10791300EC20AF /* DeviceRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRepositoryProtocol.swift; sourceTree = "<group>"; };
 		71CD3C752A10793500EC20AF /* DeviceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRepository.swift; sourceTree = "<group>"; };
 		71CD3C772A107A3D00EC20AF /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
+		8D0D0BCE77F62E008F1613DE /* Pods-IntelbrasProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-IntelbrasProjectTests/Pods-IntelbrasProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD2E5E3797DEB828A8C49BD6 /* Pods-IntelbrasProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProject.debug.xcconfig"; path = "Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject.debug.xcconfig"; sourceTree = "<group>"; };
+		D3A49938305F8A31363F2A9E /* Pods-IntelbrasProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelbrasProjectTests.release.xcconfig"; path = "Target Support Files/Pods-IntelbrasProjectTests/Pods-IntelbrasProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5456CA4577537C4564DD8CEF /* Pods_IntelbrasProjectTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +112,8 @@
 			children = (
 				CD2E5E3797DEB828A8C49BD6 /* Pods-IntelbrasProject.debug.xcconfig */,
 				6EE86715FB834451E712EBA3 /* Pods-IntelbrasProject.release.xcconfig */,
+				8D0D0BCE77F62E008F1613DE /* Pods-IntelbrasProjectTests.debug.xcconfig */,
+				D3A49938305F8A31363F2A9E /* Pods-IntelbrasProjectTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -265,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				0FE701BA8206182C0D996DF9 /* Pods_IntelbrasProject.framework */,
+				2C7EBB6749EEF970E2182BC5 /* Pods_IntelbrasProjectTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -296,9 +304,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71C21B572A12470C00F6EA6F /* Build configuration list for PBXNativeTarget "IntelbrasProjectTests" */;
 			buildPhases = (
+				D510374E73BB01A6E23A87EA /* [CP] Check Pods Manifest.lock */,
 				71C21B4D2A12470B00F6EA6F /* Sources */,
 				71C21B4E2A12470B00F6EA6F /* Frameworks */,
 				71C21B4F2A12470B00F6EA6F /* Resources */,
+				672CAFF079D9460421F71F5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -392,6 +402,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		672CAFF079D9460421F71F5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelbrasProjectTests/Pods-IntelbrasProjectTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelbrasProjectTests/Pods-IntelbrasProjectTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntelbrasProjectTests/Pods-IntelbrasProjectTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		71178E6A2A0E6FC8006D9907 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -405,7 +432,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,6 +453,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntelbrasProject/Pods-IntelbrasProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D510374E73BB01A6E23A87EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IntelbrasProjectTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -672,6 +721,7 @@
 		};
 		71C21B582A12470C00F6EA6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D0D0BCE77F62E008F1613DE /* Pods-IntelbrasProjectTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -690,6 +740,7 @@
 		};
 		71C21B592A12470C00F6EA6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3A49938305F8A31363F2A9E /* Pods-IntelbrasProjectTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
