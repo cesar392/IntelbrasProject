@@ -48,8 +48,10 @@ class VideoDeviceRepository: VideoDeviceRepositoryProtocol, IntelbrasAPIRequestH
     func createVideoDevice(_ device: CreationVideoDeviceParameters) -> Completable {
         Completable.create(subscribe: { observer in
             let url = URL(string: Constants.videoDevicesURL)!
+            let object = ["name": device.name, "serial": device.serial,
+                          "username": device.username, "password": device.password]
 
-            let jsonData = try! JSONSerialization.data(withJSONObject: device, options: [])
+            let jsonData = try! JSONSerialization.data(withJSONObject: object, options: [])
 
             var request = URLRequest(url: url)
             request.httpMethod = HTTPMethod.post.rawValue

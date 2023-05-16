@@ -36,7 +36,7 @@ class CreateDeviceViewController: UIViewController {
            let serial = serialTextField.text,
            let username = usernameTextField.text,
            let password = passwordTextField.text,
-           serial.count < Constants.minimumSerialLength {
+           serial.count == Constants.serialLength {
             viewModel.onSaveButtonSelected(name: name, serial: serial, username: username, password: password)
         } else {
             // TODO: Handle error: missing/wrong parameters
